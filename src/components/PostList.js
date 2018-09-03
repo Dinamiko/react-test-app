@@ -8,19 +8,29 @@ class PostList extends Component {
         posts: []
     };
 
-    componentDidMount() {
-        this.setState({
-            posts: this.props.getPosts()
+    componentWillMount() {
+        this.props.fetchPosts();
+    }
+
+    renderPosts() {
+        return this.props.posts.map((post, index) => {
+            return <li key={index}>{post.title}</li>
         });
     }
 
     render() {
         return (
             <div>
-                Post List
+                {this.renderPosts()}
             </div>
         );
     }
 }
 
-export default connect(null, actions)(PostList);
+function mapStateToProps(state) {
+    return {
+        posts: state.posts
+    }
+}
+
+export default connect(mapStateToProps, actions)(PostList);

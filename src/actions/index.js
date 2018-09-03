@@ -1,13 +1,13 @@
-import {GET_POSTS} from "./types";
+import {FETCH_POSTS} from "./types";
 
 const somePosts = [
     {title: 'Post one'},
     {title: 'Post two'},
 ];
 
-export function getPosts() {
+export function fetchPosts() {
     return {
-        type: GET_POSTS,
+        type: FETCH_POSTS,
         payload: somePosts
     };
 }
