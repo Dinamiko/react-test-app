@@ -7,7 +7,7 @@ const somePosts = [
 
 export function getPosts() {
     return {
-        action: GET_POSTS,
+        type: GET_POSTS,
         payload: somePosts
     };
 }
