@@ -1,13 +1,12 @@
+import axios from 'axios';
 import {FETCH_POSTS} from "./types";
 
-const somePosts = [
-    {title: 'Post one'},
-    {title: 'Post two'},
-];
-
 export function fetchPosts() {
+
+    const response = axios.get('https://jsonplaceholder.typicode.com/posts');
+
     return {
         type: FETCH_POSTS,
-        payload: somePosts
+        payload: response
     };
 }
