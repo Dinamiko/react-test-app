@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
+import PostItem from './PostItem';
 
 class PostList extends Component {
 
@@ -8,19 +9,29 @@ class PostList extends Component {
         posts: []
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchPosts();
     }
 
     renderPosts() {
+        if(this.props.posts.length === 0) {
+            return 'Loading...';
+        }
+
         return this.props.posts.map((post, index) => {
-            return <li key={index}>{post.title}</li>
+            return <PostItem key={index} post={post} />
         });
     }
+
+    onClickRefresh = () => {
+        this.props.emptyPosts();
+        this.props.fetchPosts();
+    };
 
     render() {
         return (
             <div>
+                <button onClick={this.onClickRefresh}>Refresh</button>
                 {this.renderPosts()}
             </div>
         );

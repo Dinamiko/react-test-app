@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default () => {
-    return <div>Post Item</div>
+export default (props) => {
+    return <li id={props.post.id}>{props.post.title}</li>
 };
