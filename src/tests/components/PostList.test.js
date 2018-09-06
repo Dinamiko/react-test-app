@@ -19,23 +19,48 @@ afterEach(() => {
     moxios.uninstall();
 });
 
-it('creates one li per post', (done) => {
-    const component = mount(
-        <Root>
-            <PostList/>
-        </Root>
-    );
+describe('posts list component', () => {
 
-    moxios.wait(() => {
-        component.update();
+    let component;
+    beforeEach(() => {
+        component = mount(
+            <Root>
+                <PostList/>
+            </Root>
+        );
+    });
 
-        try {
-            expect(component.find('li').length).toEqual(2);
-            done();
-        } catch(e) {
-            done.fail(e);
-        } finally {
-            component.unmount();
-        }
+    it('creates one li per post', (done) => {
+
+        moxios.wait(() => {
+            component.update();
+
+            try {
+                expect(component.find('li').length).toEqual(2);
+                done();
+            } catch (e) {
+                done.fail(e);
+            } finally {
+                component.unmount();
+            }
+        });
+    });
+
+    it('refresh button removes posts before fetch', () => {
+
+        moxios.wait(() => {
+            component.update();
+
+            try {
+                component.find('button').simulate('click');
+                expect(component.find('li').length).toEqual(0);
+                done();
+            } catch (e) {
+                done.fail(e);
+            } finally {
+                component.unmount();
+            }
+        });
     });
 });
+
