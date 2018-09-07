@@ -10,7 +10,10 @@ The above command creates a couple of containers, one for displaying the app in 
 $ docker ps
 $ docker logs {CONTAINER ID}
 ```
-In order to run the test you can execute the test command directly in the container:
+You can visit [http://localhost:3000](http://localhost:3000) to see the app
+.
+### Tests
+In order to run the tests you can execute the test command directly in the container:
 ```bash
 $ docker exec -ti {TEST CONTAINER ID} npm run test
 ```
