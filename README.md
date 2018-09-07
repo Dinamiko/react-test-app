@@ -1,2 +1,17 @@
-### Create docker image from custom docker file
-`docker build -f Dockerfile.dev .`
+## React Test App
+A simple app for practicing testing stuff in React.
+
+## Development
+```bash
+$ docker-compose up
+```
+The above command creates a couple of containers, one for displaying the app in the browser and the other for running the tests.
+```bash
+$ docker ps
+$ docker logs {CONTAINER ID}
+```
+In order to run the test you can execute the test command directly in the container:
+```bash
+$ docker exec -ti {TEST CONTAINER ID} npm run test
+```
+
