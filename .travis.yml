@@ -7,5 +7,6 @@ before_install:
   - docker build -t acceptance -f Dockerfile.dev .
 
 script:
+  - docker run unit npm run lint
   - docker run unit npm run test -- --coverage
   - docker run acceptance npm run acceptance -- --forceExit
