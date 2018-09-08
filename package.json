@@ -18,6 +18,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "acceptance": "jest -c acceptance/jest.config.js",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jest-puppeteer": "^3.3.1",
+    "puppeteer": "1.4.0"
   }
 }
