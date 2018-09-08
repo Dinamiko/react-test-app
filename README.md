@@ -5,17 +5,23 @@ A simple app for practicing testing stuff in React.
 ```bash
 $ docker-compose up -d
 ```
-The above command creates a couple of containers, one for displaying the app in the browser and the other for running the tests.
+The above command creates a three containers:
 ```bash
 $ docker ps
-$ docker logs {CONTAINER ID}
 ```
-You can visit [http://localhost:3000](http://localhost:3000) to see the app.
 
-### Tests
-In order to run the tests you can execute the test commands directly in the container:
-```bash
+### web container
+Runs the React app on [http://localhost:3000](http://localhost:3000).
+
+### tests container
+Runs unit tests:
+```
 $ docker exec -ti {TEST CONTAINER ID} npm run test
-$ docker exec -ti {TEST CONTAINER ID} npm run test:integration
+```
+
+### acceptance container
+Runs browser tests:
+```
+$ docker exec -ti {TEST CONTAINER ID} npm run acceptance
 ```
 
