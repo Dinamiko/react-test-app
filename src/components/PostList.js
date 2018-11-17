@@ -5,10 +5,6 @@ import PostItem from './PostItem';
 
 class PostList extends Component {
 
-    state = {
-        posts: []
-    };
-
     componentDidMount() {
         this.props.fetchPosts();
     }
