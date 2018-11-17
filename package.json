@@ -105,5 +105,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "eslintIgnore": ["/src/tests/**/*.js"]
+  "eslintIgnore": [
+    "/src/tests/**/*.js"
+  ]
 }
