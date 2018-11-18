@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Calculator from './Calculator';
-import PostList from './PostList';
+import Sum from './Sum';
+import Multiply from './Multiply';
+import {connect} from 'react-redux';
 
 class App extends Component {
 
@@ -15,12 +16,21 @@ class App extends Component {
     render() {
         return (
             <div>
-                <p>Calculator State: {this.state.calculatorState}</p>
-                <Calculator title="Calculator Title Here" getEventFromCalculator={(event) => this.updateFromCalculator(event)}/>
+                <p>Sum State: {this.state.calculatorState}</p>
+                <Sum title="Sum Title Here" getEventFromCalculator={(event) => this.updateFromCalculator(event)}/>
                 <hr style={{'marginTop': '30px', 'marginBottom': '30px'}}/>
-                <PostList/>
+                <p>Multiply State: {this.props.math.result}</p>
+                <Multiply/>
+                <hr style={{'marginTop': '30px', 'marginBottom': '30px'}}/>
             </div>
         );
     }
 }
-export default App;
+
+function mapStateToProps(state) {
+    return {
+        math: state.math
+    };
+}
+
+export default connect(mapStateToProps)(App);

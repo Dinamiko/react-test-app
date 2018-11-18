@@ -1,19 +1,26 @@
-import axios from 'axios';
-import {FETCH_POSTS, EMPTY_POSTS} from "./types";
+import {UPDATE_A, UPDATE_B, MULTIPLY} from "./types";
+import {multiply} from "../utils/math";
 
-export function fetchPosts() {
 
-    const response = axios.get('https://jsonplaceholder.typicode.com/posts');
-
+export function updateA(value) {
     return {
-        type: FETCH_POSTS,
-        payload: response
+        type: UPDATE_A,
+        payload: value
     };
 }
 
-export function emptyPosts() {
+export function updateB(value) {
     return {
-        type: EMPTY_POSTS,
-        payload: []
-    }
+        type: UPDATE_B,
+        payload: value
+    };
+}
+
+export function doMultiply(a, b) {
+    const result = multiply(a, b);
+
+    return {
+      type: MULTIPLY,
+      payload: result
+    };
 }

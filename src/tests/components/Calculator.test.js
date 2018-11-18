@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Calculator from '../../components/Calculator';
+import Sum from '../../components/Sum';
 
 let component;
 beforeEach(() => {
-    component = shallow(<Calculator title="Title here" getEventFromCalculator={() => {}}/>);
+    component = shallow(<Sum title="Title here" getEventFromCalculator={() => {}}/>);
 });
 
 test('display title', () => {

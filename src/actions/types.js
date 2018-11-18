@@ -1,2 +1,3 @@
-export const FETCH_POSTS = 'FETCH_POSTS';
-export const EMPTY_POSTS = 'EMPTY_POSTS';
+export const UPDATE_A = 'UPDATE_A';
+export const UPDATE_B = 'UPDATE_B';
+export const MULTIPLY = 'MULTIPLY';

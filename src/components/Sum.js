@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {sum} from '../utils/math';
 
-class Calculator extends Component {
+class Sum extends Component {
 
     state = {
         a: 0,
@@ -41,4 +41,4 @@ class Calculator extends Component {
     }
 }
 
-export default Calculator;
+export default Sum;

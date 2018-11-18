@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import postsReducer from './posts';
+import mathReducer from './math';
 
 export default combineReducers({
-    posts: postsReducer
+    math: mathReducer
 });
