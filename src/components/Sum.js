@@ -32,8 +32,10 @@ class Sum extends Component {
                 <h3>{this.props.title}</h3>
                 <input id="a" type="number" value={this.state.a}
                        onChange={(event) => this.onChangeA(event.target.value)}/>
+                <label> + </label>
                 <input id="b" type="number" value={this.state.b}
                        onChange={(event) => this.onChangeB(event.target.value)}/>
+                <label> = </label>
                 <input id="result" type="number" value={this.state.result} readOnly/>
                 <button onClick={this.doSum}>Sum!</button>
             </div>

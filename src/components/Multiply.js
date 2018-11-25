@@ -21,8 +21,10 @@ class Multiply extends Component {
             <div>
                 <input id="a" type="number" value={this.props.math.a}
                        onChange={(event) => this.onChangeA(event.target.value)}/>
+                <label> * </label>
                 <input id="b" type="number" value={this.props.math.b}
                        onChange={(event) => this.onChangeB(event.target.value)}/>
+                <label> = </label>
                 <input id="result" type="number" value={this.props.math.result} readOnly/>
                 <button onClick={this.doMultiply}>Multiply!</button>
             </div>

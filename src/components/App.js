@@ -21,7 +21,6 @@ class App extends Component {
                 <hr style={{'marginTop': '30px', 'marginBottom': '30px'}}/>
                 <p>Multiply State: {this.props.math.result}</p>
                 <Multiply/>
-                <hr style={{'marginTop': '30px', 'marginBottom': '30px'}}/>
             </div>
         );
     }
